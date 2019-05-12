@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+html {
+  background-image: url('./Resources/negative-space-ocean-morning-sunrise-clouds-horizon.jpg');
+  background-size: cover;
+}

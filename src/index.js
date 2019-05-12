@@ -8,7 +8,7 @@ import routes from './routes';
 
 const app = express()
 
-// Middleware 
+// Middleware
 app.use(cors());
 
 app.use(bodyParser.json())
@@ -17,14 +17,15 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(async (req, res, next) => {
     req.context = {
         models,
-        me: await models.User.findByLogin('example@g.com'),
+        me: await models.User.findByLogin('cmoqing@g.com'),
     }
     next()
 })
 
 //Routes
-app.use('/session', routes.session)
-app.use('/register', routes.user)
+app.use('/register', routes.register)
+app.use('/login', routes.login)
+//app.use('/register', routes.user)
 app.use('/posts', routes.post)
 
 // Database Sync
@@ -43,7 +44,6 @@ sequelize.sync({ force: eraseDatabaseOnSync }).then(async () => {
 async function createUsersWithFeed() {
     await models.User.create(
     {
-        ID: 1,
         email: 'cmoqing@g.com',
         password: 'pass1',
         firstName: 'Cameron',
@@ -64,7 +64,6 @@ async function createUsersWithFeed() {
 
     await models.User.create(
     {
-        ID: 2,
         email: 'example@g.com',
         password: 'pass1',
         firstName: 'Jane',

@@ -7,6 +7,10 @@ function validateReg(values) {
     if (!values.lastName) {
         errors.lastName = 'Name is required.'
     }
+    if (!values.nickname) {
+        errors.nickname = 'Nickname is required.'
+    }
+    
     // validate email
     if (!values.email) {
         errors.email = 'Email address is required.'
@@ -22,13 +26,14 @@ function validateReg(values) {
     }
 
     // validate password confirmation
-    if (!values.confPassword) {
-        errors.confPassword = 'Password is required.'
-    } else if (values.password.length < 8) {
-        errors.confPassword = 'Password must be 8 or more characters.'
-    } else if (values.password !== values.confPassword) {
-        errors.confPassword = 'Password must match.'
+    if (!values.confirmPassword) {
+        errors.confirmPassword = 'Password is required.'
+    } else if (values.confirmPassword.length < 8) {
+        errors.confirmPassword = 'Password must be 8 or more characters.'
+    } else if (values.password !== values.confirmPassword) {
+        errors.confirmPassword = 'Password must match.'
     }
+
 
     return errors;
 };

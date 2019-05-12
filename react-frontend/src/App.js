@@ -5,7 +5,9 @@ import './App.css';
 function App() {
   return (
     <div>
-      <FormRegistration/>
+      <div>
+        <FormRegistration/>
+      </div>
     </div>
   );
 }
