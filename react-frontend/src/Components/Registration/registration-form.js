@@ -166,7 +166,6 @@ const FormRegistration = () => {
                                                 {value.gender}
                                             </option>
                                         ))}
-                                        <option value='' disabled defaultValue>Gender</option>
                                     </select>
                                 </div>
                             </div>
