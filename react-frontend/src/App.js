@@ -1,12 +1,13 @@
 import React from 'react';
-import FormRegistration from './Components/Registration/registration-form'
-import './App.css';
+//import FormRegistration from './Components/Registration/registration-form'
+import FormLogin from'./Components/Login/login-form'
+
 
 function App() {
   return (
-    <div>
-      <div>
-        <FormRegistration/>
+    <div className = 'columns'>
+      <div className = 'column'>
+        <FormLogin/>
       </div>
     </div>
   );

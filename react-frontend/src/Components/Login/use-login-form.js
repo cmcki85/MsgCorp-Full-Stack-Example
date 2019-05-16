@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-const useRegistrationForm = (callback, validate) => {
+const useLoginForm = (callback, validate) => {
     const [values, setValues] = useState({});
     const [errors, setErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -15,7 +15,6 @@ const useRegistrationForm = (callback, validate) => {
         if (e) e.preventDefault();
         setErrors(validate(values));
         setIsSubmitting(true);
-        
     };
 
     const handleChange = (e) => {
@@ -31,4 +30,4 @@ const useRegistrationForm = (callback, validate) => {
     }
 };
 
-export default useRegistrationForm
+export default useLoginForm
